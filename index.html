@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI vs Human: Narrative Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .question {
+        margin: 20px 0;
+      }
+      .answers {
+        margin: 10px 0;
+      }
+      .answers button {
+        margin: 5px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .answers button:hover {
+        background-color: #0056b3;
+      }
+      #results {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #e8f5e9;
+        border: 1px solid #a5d6a7;
+        display: none;
+      }
+      footer {
+        text-align: center;
+        padding: 10px 20px;
+        margin-top: 30px;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>AI vs Human: Can You Tell the Difference?</h1>
+      <p>
+        Challenge your assumptions about generative AI's narrative creativity!
+      </p>
+    </header>
+    <main>
+      <div id="quiz">
+        <div class="question" id="question-1">
+          <h3>Question 1</h3>
+          <p>"Once upon a time, in a quiet forest..."</p>
+          <div class="answers">
+            <button onclick="selectAnswer('human', 1)">Human</button>
+            <button onclick="selectAnswer('ai', 1)">AI</button>
+          </div>
+        </div>
+        <div class="question" id="question-2">
+          <h3>Question 2</h3>
+          <p>
+            "The stars glimmered faintly, casting shadows over the vast
+            desert..."
+          </p>
+          <div class="answers">
+            <button onclick="selectAnswer('human', 2)">Human</button>
+            <button onclick="selectAnswer('ai', 2)">AI</button>
+          </div>
+        </div>
+      </div>
+      <div id="results">
+        <h2>Quiz Results</h2>
+        <p id="score"></p>
+        <p>
+          Thank you for participating! This quiz showcases AI's potential in
+          creating narrative writing comparable to humans.
+        </p>
+      </div>
+    </main>
+    <footer>
+      <p>Your Opinion</p>
+      <p>
+        Generative AI, when guided, can produce narratives that rival human
+        creativity, challenging long-held biases.
+      </p>
+    </footer>
+
+    <script>
+      let score = 0;
+      let totalQuestions = 2;
+
+      function selectAnswer(choice, questionNumber) {
+        // Correct answers for this example (you can replace with real logic)
+        const answers = {
+          1: "human",
+          2: "ai",
+        };
+
+        if (choice === answers[questionNumber]) {
+          score++;
+        }
+
+        // Hide the current question and move to the next
+        document.getElementById(`question-${questionNumber}`).style.display =
+          "none";
+
+        if (questionNumber === totalQuestions) {
+          showResults();
+        }
+      }
+
+      function showResults() {
+        document.getElementById("results").style.display = "block";
+        document.getElementById(
+          "score"
+        ).textContent = `You scored ${score} out of ${totalQuestions}!`;
+      }
+    </script>
+  </body>
+</html>
