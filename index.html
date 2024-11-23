@@ -122,7 +122,18 @@
             off this mortal coil, Must give us pause—there's the respect That
             makes calamity of so long life. "
           </p>
-          <p><strong>Paragraph 2:</strong> "AI Hamlet"</p>
+          <p>
+            <strong>Paragraph 2:</strong> "To be or not to be, that is the
+            question: Whether it is nobler in the mind to suffer The slings and
+            arrows of outrageous fortune, Or to take arms against a sea of
+            troubles And, by opposing, end them. To die, to sleep, no more; and
+            by a sleep To say we end the heartache and the thousand Natural
+            shocks that flesh is heir to. 'Tis a consummation devoutly to be
+            wished. To die, to sleep; to sleep, perchance to dream, Ay, there's
+            the rub. For in that sleep of death, What dreams may come, when we
+            have shuffled off This mortal coil, must give us pause. There's the
+            respect that makes calamity Of so long life. "
+          </p>
           <div class="answers">
             <button onclick="selectAnswer(2, 'paragraph1')">
               Paragraph 1 is AI!
@@ -134,7 +145,28 @@
         </div>
         <div class="question" id="question-3">
           <h3>Question 3: Arthur Conan Doyle or AI?</h3>
-          <p><strong>Paragraph 1:</strong> ""</p>
+          <p>
+            <strong>Paragraph 1:</strong> "In the autumn of 1878, I proudly
+            earned my Doctor of Medicine from the esteemed University of London.
+            With my diploma in hand and ambition burning bright, I journeyed to
+            Netley, where the rigorous training for army surgeons awaited.
+            There, amid the halls echoing with the murmur of lectures and the
+            clang of surgical tools, I honed the skills that would soon be
+            tested in distant lands. My appointment as Assistant Surgeon to the
+            Fifth Northumberland Fusiliers marked the start of an adventure that
+            would carry me far from English shores. The regiment, already
+            stationed in India, had been swept into the storm of the second
+            Afghan war. News of this turmoil reached me as my ship docked in the
+            bustling port of Bombay, its air heavy with spices and the clamor of
+            distant drums. Though the passes were treacherous and the enemy’s
+            shadow loomed large, I pressed on, joining a cohort of officers
+            equally determined to reach their posts. Our journey was fraught
+            with peril, but at last, we arrived at Candahar, that storied
+            outpost shimmering in the heat of the Afghan sun. There, among the
+            dust and din of military life, I found my regiment. Without
+            hesitation, I stepped into the chaos, my role as a healer now
+            entwined with the rhythms of war. "
+          </p>
           <p>
             <strong>Paragraph 2:</strong> "In the year 1878 I took my degree of
             Doctor of Medicine of the University of London, and proceeded to
@@ -177,7 +209,26 @@
             would discover it. They didn't think they could bear it if anyone
             found out about the Potters. "
           </p>
-          <p><strong>Paragraph 2:</strong> ""</p>
+          <p>
+            <strong>Paragraph 2:</strong> "At number four, Privet Drive, lived
+            the Dursleys—a family so perfectly ordinary that they might as well
+            have been stamped out of a suburban mold. They took pride in their
+            normality, thank you very much, and prided themselves on steering
+            clear of anything remotely peculiar or unpredictable. Mr. Vernon
+            Dursley, the burly director of a drill-manufacturing firm called
+            Grunnings, was a man of girth and gruffness, sporting a mustache as
+            substantial as his opinions. Mrs. Petunia Dursley, by contrast, was
+            as slender as a garden rake, with a neck so elongated it seemed
+            tailor-made for peering over fences and monitoring the misdeeds of
+            her neighbors. Their pride and joy was their son Dudley, a boy they
+            regarded as the pinnacle of childhood perfection, though others
+            might whisper otherwise. Life was good, predictable, and just the
+            way they liked it—except for one thing. The Dursleys had a secret, a
+            shadow they refused to acknowledge. They dreaded the very thought of
+            anyone discovering the Potters, those peculiar relatives of theirs.
+            Such a revelation, they were certain, would unravel the fragile
+            tapestry of their carefully crafted lives. "
+          </p>
           <div class="answers">
             <button onclick="selectAnswer(1, 'paragraph1')">
               Paragraph 1 is AI!
@@ -222,7 +273,7 @@
 
     <script>
       let score = 0;
-      let totalQuestions = 2;
+      let totalQuestions = 5;
 
       // Correct answers and explanations
       const answers = {
@@ -239,7 +290,7 @@
         3: {
           correct: "paragraph 1",
           explanation:
-            "Paragraph 1 was AI-generated. Check out how it was prompted to create this writing! (). Paragraph 2 was from A Study in Scarlet by Arthur Conan Doyle",
+            "Paragraph 1 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/67424a3c-58f8-8004-b0f9-db5026b93325). Paragraph 2 was from A Study in Scarlet by Arthur Conan Doyle",
         },
         4: {
           correct: "paragraph 2",
@@ -277,6 +328,7 @@
 
         // Add explanations
         const explanationsList = document.getElementById("explanations");
+        explanationsList.innerHTML = ""; // Clear previous content
         for (let i = 1; i <= totalQuestions; i++) {
           const listItem = document.createElement("li");
           listItem.textContent = `Question ${i}: ${answers[i].explanation}`;
