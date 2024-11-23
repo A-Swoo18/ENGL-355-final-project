@@ -182,10 +182,10 @@
             entered upon my new duties. "
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(1, 'paragraph1')">
+            <button onclick="selectAnswer(3, 'paragraph1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(1, 'paragraph2')">
+            <button onclick="selectAnswer(3, 'paragraph2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -230,10 +230,10 @@
             tapestry of their carefully crafted lives. "
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(1, 'paragraph1')">
+            <button onclick="selectAnswer(4, 'paragraph1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(1, 'paragraph2')">
+            <button onclick="selectAnswer(4, 'paragraph2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -243,10 +243,10 @@
           <p><strong>Paragraph 1:</strong> ""</p>
           <p><strong>Paragraph 2:</strong> ""</p>
           <div class="answers">
-            <button onclick="selectAnswer(1, 'paragraph1')">
+            <button onclick="selectAnswer(5, 'paragraph1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(1, 'paragraph2')">
+            <button onclick="selectAnswer(5, 'paragraph2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -274,6 +274,7 @@
     <script>
       let score = 0;
       let totalQuestions = 5;
+      let QuestionAnswered = 0;
 
       // Correct answers and explanations
       const answers = {
@@ -295,7 +296,7 @@
         4: {
           correct: "paragraph 2",
           explanation:
-            "Paragraph 1 was from Harry Potter and the Sorcerer's Stone by J K Rowling. Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! ().",
+            "Paragraph 1 was from Harry Potter and the Sorcerer's Stone by J K Rowling. Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/67425e4d-1b74-8004-9146-5cc4b94f8096 ).",
         },
         5: {
           correct: "paragraph 1",
@@ -306,6 +307,7 @@
 
       function selectAnswer(questionNumber, selected) {
         // Check if the answer is correct
+        QuestionAnswered++;
         if (selected === answers[questionNumber].correct) {
           score++;
         }
@@ -314,7 +316,7 @@
         document.getElementById(`question-${questionNumber}`).style.display =
           "none";
 
-        if (questionNumber === totalQuestions) {
+        if (QuestionAnswered === totalQuestions) {
           showResults();
         }
       }
@@ -328,7 +330,6 @@
 
         // Add explanations
         const explanationsList = document.getElementById("explanations");
-        explanationsList.innerHTML = ""; // Clear previous content
         for (let i = 1; i <= totalQuestions; i++) {
           const listItem = document.createElement("li");
           listItem.textContent = `Question ${i}: ${answers[i].explanation}`;
@@ -342,3 +343,12 @@
 <!-- The Great Gatsby -->
 <!-- To Kill a Mockingbird -->
 <!-- my own writing -->
+
+<!-- 
+Things to improve:
+New York Times 
+My own writing
+Quiz result count not going up
+better display on the result
+hyperlinkn the url 
+-->
