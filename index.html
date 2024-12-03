@@ -100,10 +100,10 @@
             banner of endless defeat, worn and weary from the fight."
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(1, 'paragraph1')">
+            <button onclick="selectAnswer(1, 'paragraph 1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(1, 'paragraph2')">
+            <button onclick="selectAnswer(1, 'paragraph 2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -135,10 +135,10 @@
             respect that makes calamity Of so long life. "
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(2, 'paragraph1')">
+            <button onclick="selectAnswer(2, 'paragraph 1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(2, 'paragraph2')">
+            <button onclick="selectAnswer(2, 'paragraph 2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -182,10 +182,10 @@
             entered upon my new duties. "
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(3, 'paragraph1')">
+            <button onclick="selectAnswer(3, 'paragraph 1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(3, 'paragraph2')">
+            <button onclick="selectAnswer(3, 'paragraph 2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -230,23 +230,54 @@
             tapestry of their carefully crafted lives. "
           </p>
           <div class="answers">
-            <button onclick="selectAnswer(4, 'paragraph1')">
+            <button onclick="selectAnswer(4, 'paragraph 1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(4, 'paragraph2')">
+            <button onclick="selectAnswer(4, 'paragraph 2')">
               Paragraph 2 is AI!
             </button>
           </div>
         </div>
         <div class="question" id="question-5">
           <h3>Question 5: The New York Times or AI?</h3>
-          <p><strong>Paragraph 1:</strong> ""</p>
-          <p><strong>Paragraph 2:</strong> ""</p>
+          <p>
+            <strong>Paragraph 1:</strong> "In the world of theater, customs
+            abound—many shrouded in mystery, their origins as hazy as stage fog.
+            Yet these rituals endure, cherished by performers and crew alike.
+            After all, in an industry that strives to summon the same magic
+            night after night, despite wildly varying outcomes, tradition offers
+            a rare and steady comfort. For Patrick Bevilacqua, a Broadway
+            wardrobe supervisor and costume designer with decades of experience,
+            some of these practices are what he calls "rituals of consistency."
+            There’s something grounding about the small acts: a fist bump
+            exchanged before the curtain rises or the brisk spritz of Listerine
+            during a backstage quick change—moments so meticulously rehearsed,
+            they feel as vital as the show’s choreography. Others, however,
+            delve deeper, touching on something spiritual. As actress Lea
+            Salonga reflects, any ritual that reminds the cast and crew of their
+            shared humanity becomes an anchor, a quiet assurance in the midst of
+            the chaos of live theater."
+          </p>
+          <p>
+            <strong>Paragraph 2:</strong> " Theater is full of these customs --
+            many arising, like most rituals, from hazy origins. Still, show
+            people hold on to them. In an industry that hopes to conjure the
+            same wonder every night (with wildly different results), there's
+            comfort in tradition, especially if it reaches back decades or even
+            centuries. Some, as the 56-year-old Broadway wardrobe supervisor and
+            costume designer Patrick Bevilacqua says, are ''rituals of
+            consistency'' -- the private fist bumps or helpful Listerine sprays
+            during a backstage quick change, which must be ''choreographed
+            within an inch of its life'' to keep the show running smoothly.
+            Others are spiritual; according to the actress Lea Salonga, 53,
+            ''any practice where everyone can see each other as human'' is
+            necessarily grounding."
+          </p>
           <div class="answers">
-            <button onclick="selectAnswer(5, 'paragraph1')">
+            <button onclick="selectAnswer(5, 'paragraph 1')">
               Paragraph 1 is AI!
             </button>
-            <button onclick="selectAnswer(5, 'paragraph2')">
+            <button onclick="selectAnswer(5, 'paragraph 2')">
               Paragraph 2 is AI!
             </button>
           </div>
@@ -271,6 +302,8 @@
       </p>
     </footer>
 
+    <script src="quiz.js"></script>
+
     <script>
       let score = 0;
       let totalQuestions = 5;
@@ -281,7 +314,7 @@
         1: {
           correct: "paragraph 2",
           explanation:
-            "Paragraph 1 was from The Old Man and the Sea written by Ernest Hemingway. Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/6740a9c9-f210-8004-8c7a-349ec92412aa).",
+            "Paragraph 1 was from The Old Man and the Sea written by Ernest Hemingway. \n Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/6740a9c9-f210-8004-8c7a-349ec92412aa).",
         },
         2: {
           correct: "paragraph 2",
@@ -301,7 +334,7 @@
         5: {
           correct: "paragraph 1",
           explanation:
-            "Paragraph 1 was AI-generated.  Check out how it was prompted to create this writing! (). Paragraph 2 was a New York Times article article name by who wrote it",
+            "Paragraph 1 was AI-generated.  Check out how it was prompted to create this writing! (https://chatgpt.com/share/674ec329-0144-8004-8daf-b120e4f06e6c). Paragraph 2 was a New York Times article article name by who wrote it",
         },
       };
 
@@ -352,3 +385,8 @@ Quiz result count not going up
 better display on the result
 hyperlinkn the url 
 -->
+
+<!-- NYT citation mla -->
+<!-- Ramírez, Juan A., and Daniel Terna. "Don't Say 'Macbeth'." New York Times, 16 Nov. 2025, p. 56.
+ Gale Academic OneFile, link.gale.com/apps/doc/A816373540/AONE?
+ u=tel_a_utl&sid=bookmark-AONE&xid=18ac76c2. Accessed 29 Nov. 2024. -->
