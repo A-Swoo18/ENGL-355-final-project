@@ -45,6 +45,7 @@
         background-color: #0056b3;
       }
       #results {
+        margin: 10px;
         margin: 20px 0;
         padding: 15px;
         background-color: #e8f5e9;
@@ -64,7 +65,19 @@
     <header>
       <h1>AI vs Human: Can You Tell the Difference?</h1>
       <p>
-        Challenge your assumptions about generative AI's narrative creativity!
+        Welcome to the AI Narrative Challenge! <br />
+        This quiz is designed to test your ability to distinguish between
+        human-written and AI-generated narrative writing. <br />
+        Can generative AI produce emotionally engaging or creative stories?
+        Let's find out! <br />
+        You’ll be presented with pairs of excerpts: one original and one
+        AI-generated. <br />
+        Can you identify the original.. or AI? <br />
+        After each question, you’ll see the answer with a brief explanation to
+        reflect on your assumptions. <br />
+        By the end of the quiz, you might discover new perspectives on the role
+        of AI in storytelling. <br />
+        Let’s see how well you can tell the difference!
       </p>
     </header>
     <main>
@@ -285,9 +298,24 @@
       </div>
       <div id="results">
         <h2>Quiz Results</h2>
+        <p>
+          Did You know that most people get 2~3 questions incorrect? <br />
+          Let's see the explanation!
+        </p>
         <p id="score"></p>
         <p>Explanations:</p>
         <ul id="explanations"></ul>
+        <p>
+          Thank you for taking the AI Narrative Challenge! <br />
+          Your results reflect how well you could identify human writing versus
+          AI-generated content, but more importantly, they reveal how closely AI
+          can mimic creative narratives. <br />
+          Whether you succeeded or were surprised by the results, I hope this
+          experience challenged your assumptions about generative AI’s creative
+          potential. <br />
+          AI is a tool for efficiency, but given human guidence, it can mimic
+          the emotionally resonant stories. <br />
+        </p>
         <p>
           Thank you for participating! This quiz showcases AI's potential in
           creating narrative writing comparable to humans.
@@ -309,12 +337,11 @@
       let totalQuestions = 5;
       let QuestionAnswered = 0;
 
-      // Correct answers and explanations
       const answers = {
         1: {
           correct: "paragraph 2",
           explanation:
-            "Paragraph 1 was from The Old Man and the Sea written by Ernest Hemingway. \n Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/6740a9c9-f210-8004-8c7a-349ec92412aa).",
+            "Paragraph 1 was from The Old Man and the Sea written by Ernest Hemingway. Paragraph 2 was AI-generated. Check out how it was prompted to create this writing! (https://chatgpt.com/share/6740a9c9-f210-8004-8c7a-349ec92412aa).",
         },
         2: {
           correct: "paragraph 2",
@@ -334,18 +361,16 @@
         5: {
           correct: "paragraph 1",
           explanation:
-            "Paragraph 1 was AI-generated.  Check out how it was prompted to create this writing! (https://chatgpt.com/share/674ec329-0144-8004-8daf-b120e4f06e6c). Paragraph 2 was a New York Times article article name by who wrote it",
+            "Paragraph 1 was AI-generated.  Check out how it was prompted to create this writing! (https://chatgpt.com/share/674ec329-0144-8004-8daf-b120e4f06e6c). Paragraph 2 was from a New York Times article, Don't Say 'Macbeth' by Ramírez, Juan A., and Daniel Terna",
         },
       };
 
       function selectAnswer(questionNumber, selected) {
-        // Check if the answer is correct
         QuestionAnswered++;
         if (selected === answers[questionNumber].correct) {
           score++;
         }
 
-        // Hide the current question and move to the next
         document.getElementById(`question-${questionNumber}`).style.display =
           "none";
 
@@ -355,17 +380,15 @@
       }
 
       function showResults() {
-        // Display results
         document.getElementById("results").style.display = "block";
         document.getElementById(
           "score"
         ).textContent = `You scored ${score} out of ${totalQuestions}!`;
 
-        // Add explanations
         const explanationsList = document.getElementById("explanations");
         for (let i = 1; i <= totalQuestions; i++) {
           const listItem = document.createElement("li");
-          listItem.textContent = `Question ${i}: ${answers[i].explanation}`;
+          listItem.textContent = `Question ${i}: ${answers[i].explanation}                `;
           explanationsList.appendChild(listItem);
         }
       }
